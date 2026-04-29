@@ -1,0 +1,34 @@
+name: Render Remotion Video
+
+on:
+push:
+branches:
+- main
+
+jobs:
+render-video:
+runs-on: ubuntu-latest
+
+steps:
+  - name: Checkout do repositório
+    uses: actions/checkout@v4
+
+  - name: Setup Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: '18'
+
+  - name: Instalar dependências
+    run: npm install
+
+  - name: Build do Remotion
+    run: npx remotion bundle
+
+  - name: Renderizar vídeo
+    run: npx remotion render src/index.ts BotafogoScene out/video.mp4
+
+  - name: Upload artefato (vídeo)
+    uses: actions/upload-artifact@v4
+    with:
+      name: video-renderizado
+      path: out/video.mp4
