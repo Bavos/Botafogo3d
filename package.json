@@ -1,0 +1,28 @@
+{
+  "name": "botafogo3d",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "remotion preview src/index.tsx",
+    "preview": "remotion preview src/index.tsx",
+    "build": "tsc --noEmit",
+    "render": "remotion render src/index.tsx BotafogoScene out/botafogo-scene.mp4",
+    "clean": "rm -rf out"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.17.14",
+    "@remotion/three": "^4.0.372",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.372",
+    "three": "^0.161.0"
+  },
+  "devDependencies": {
+    "@remotion/cli": "^4.0.372",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/three": "^0.161.2",
+    "typescript": "^5.7.2"
+  }
+}
