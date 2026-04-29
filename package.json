@@ -1,0 +1,25 @@
+{
+  "name": "botafogo3d",
+  "version": "1.0.1",
+  "private": true,
+  "description": "Remotion + React Three Fiber scene for Botafogo3d animation",
+  "scripts": {
+    "dev": "remotion studio src/index.ts",
+    "build": "remotion bundle src/index.ts",
+    "render": "remotion render src/index.ts Botafogo3d out/Botafogo3d.mp4"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.17.14",
+    "@remotion/three": "^4.0.366",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.366",
+    "three": "^0.181.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.16",
+    "@types/react-dom": "^18.3.5",
+    "typescript": "^5.9.3"
+  }
+}
