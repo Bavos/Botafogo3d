@@ -1,4 +1,4 @@
-import {useMemo} from 'react';
+import React, {useMemo} from 'react';
 import * as THREE from 'three';
 
 interface StarProps {
@@ -8,7 +8,7 @@ interface StarProps {
 /**
  * 3D 5-point star built from a custom Shape + ExtrudeGeometry.
  */
-export const Star = ({rotationY}: StarProps) => {
+export const Star: React.FC<StarProps> = ({rotationY}) => {
   const geometry = useMemo(() => {
     const outerRadius = 1;
     const innerRadius = 0.45;

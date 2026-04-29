@@ -17,7 +17,7 @@ npm run dev
 
 ## Renderizar MP4
 ```bash
-npx remotion render src/index.ts Botafogo3d out/Botafogo3d.mp4
+npm run render
 ```
 
 ## Composição

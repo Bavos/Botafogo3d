@@ -1,3 +1,4 @@
+import React from 'react';
 import {AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
 import {ThreeCanvas} from '@remotion/three';
 import {Star} from './components/Star';
@@ -6,12 +7,12 @@ import {OrbitText} from './components/OrbitText';
 /**
  * Main 3D scene for the Botafogo composition.
  */
-export const BotafogoScene = () => {
+export const BotafogoScene: React.FC = () => {
   const frame = useCurrentFrame();
   const {durationInFrames} = useVideoConfig();
 
-  // Progress normalized to [0..1], smooth and deterministic for rendering.
-  const progress = interpolate(frame, [0, durationInFrames - 1], [0, 1], {
+  // Smooth normalized progress [0..1].
+  const progress = interpolate(frame, [0, durationInFrames], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -21,7 +22,7 @@ export const BotafogoScene = () => {
 
   return (
     <AbsoluteFill style={{backgroundColor: '#000000'}}>
-      <ThreeCanvas camera={{position: [0, 0, 5], fov: 45}} gl={{antialias: true}}>
+      <ThreeCanvas camera={{position: [0, 0, 5], fov: 45}}>
         <ambientLight intensity={0.45} />
         <directionalLight position={[2, 3, 4]} intensity={1.2} color="#ffffff" />
         <directionalLight position={[-3, -1, -2]} intensity={0.35} color="#9bb3ff" />
