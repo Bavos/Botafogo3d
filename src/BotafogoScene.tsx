@@ -1,3 +1,4 @@
+import React from 'react';
 import {AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
 import {ThreeCanvas} from '@remotion/three';
 import {Star} from './components/Star';
@@ -6,7 +7,7 @@ import {OrbitText} from './components/OrbitText';
 /**
  * Main 3D scene for the Botafogo composition.
  */
-export const BotafogoScene = () => {
+export const BotafogoScene: React.FC = () => {
   const frame = useCurrentFrame();
   const {durationInFrames} = useVideoConfig();
 
